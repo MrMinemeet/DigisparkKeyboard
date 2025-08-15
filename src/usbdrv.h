@@ -516,7 +516,7 @@ extern
 #if !(USB_CFG_DESCR_PROPS_HID_REPORT & USB_PROP_IS_RAM)
 const PROGMEM
 #endif
-char usbDescriptorHidReport[];
+unsigned char usbDescriptorHidReport[];
 #ifdef __cplusplus
 } // extern "C"
 #endif
