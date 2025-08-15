@@ -236,7 +236,7 @@ class DigiKeyboardDevice : public Print {
     usbSetInterrupt(reportBuffer, sizeof(reportBuffer));
   }
   size_t write(uint8_t chr) {
-	uint8_t data = pgm_read_byte_near(ascii_to_scan_code_table + (chr - 8));
+	uint8_t data = pgm_read_byte_near(ascii_to_scan_code_table + chr);
 	
 	uint8_t tmpmodifiers=0;
 	
@@ -261,7 +261,7 @@ class DigiKeyboardDevice : public Print {
       sendKeyStroke(51, KEY_I);
     }
 	else {
-		uint8_t data = pgm_read_byte_near(ascii_to_scan_code_table + (chr - 8));
+		uint8_t data = pgm_read_byte_near(ascii_to_scan_code_table + chr);
 		uint8_t tmpmodifiers=0;
 		
 		if (data & 0x80) {		// it's a capital letter or other character reached with shift
